@@ -207,7 +207,7 @@ h3 {
   }
 }
 
-@media screen and (width >= 640px) {
+@media screen and (639px < width < 960px) {
   /* Tablet */
   .profile-card {
     display: grid;
@@ -226,6 +226,9 @@ h3 {
     align-items: center;
     justify-content: center;
     margin-inline: auto;
+  }
+  .image img{
+    content: url("../assets/images/raster/self-portrait.webp");
   }
 }
 
