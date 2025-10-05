@@ -140,6 +140,7 @@ h3 {
   width: 90%;
   background-image: linear-gradient(hsl(0, 0%, 0%/0.5));
   padding-inline: 1em;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
 }
 .profile-title {
   padding-block: 1em 0.5em;
@@ -197,6 +198,44 @@ h3 {
   filter: none;
 }
 
+.contact-card {
+  margin-block-end: 4rem;
+}
+
+.contactme-title {
+  font-size: 5rem;
+}
+
+.contactme-tagline {
+  font-size: 2rem;
+  line-height: 1.1em;
+  margin-block-end: 2rem;
+  padding-inline-start: 4.5rem;
+}
+
+.contact {
+  display: flex;
+  padding-inline-start: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1.1em;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contactme-address {
+  padding-inline-start: 4.5rem;
+  font-size: 1.5rem;
+  line-height: 1.1em;
+}
+
+.contactme-address:nth-of-type(3){
+  padding-block-end: 2rem;
+}
+
+.inline-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
 @media screen and (width < 640px) {
   .profile-image {
     background: linear-gradient(
@@ -204,6 +243,10 @@ h3 {
       #0891b2 50%,
       var(--wrapper-background-color) 50%
     );
+
+  }
+  .contact-card .profile-text{
+    margin-block-end: 2rem;
   }
 }
 
@@ -227,7 +270,7 @@ h3 {
     justify-content: center;
     margin-inline: auto;
   }
-  .image img{
+  .image img {
     content: url("../assets/images/raster/self-portrait.webp");
   }
 }
