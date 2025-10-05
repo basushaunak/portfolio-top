@@ -85,6 +85,10 @@ h3 {
   font-size: 2rem;
 }
 
+a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
 .wrapper {
   max-width: 90%;
   position: inherit;
@@ -158,8 +162,12 @@ h3 {
 .project-card {
   width: 100%;
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+  transition: all 100ms ease-in-out;
 }
 
+.project-card:hover {
+  transform: scale(1.05);
+}
 .container-card-image {
   width: 90%;
   margin-inline: auto;
@@ -171,6 +179,9 @@ h3 {
   height: auto;
   object-fit: cover;
   object-position: center;
+}
+.card-image:hover {
+  cursor: pointer;
 }
 
 .card-heading {
@@ -199,11 +210,19 @@ h3 {
 }
 
 .contact-card {
-  margin-block-end: 4rem;
+  display: grid;
+  max-width: 80%;
+  margin-inline: auto;
+  grid-template-columns: 1fr;
+  margin-block: 1rem 4rem;
+
+  background-color: #0891b2;
 }
 
 .contactme-title {
-  font-size: 5rem;
+  font-size: 3rem;
+  padding-inline-start: 4.5rem;
+  padding-block: 1rem 2rem;
 }
 
 .contactme-tagline {
@@ -219,7 +238,8 @@ h3 {
   font-size: 1.5rem;
   line-height: 1.1em;
   align-items: center;
-  gap: 0.5rem;
+  column-gap: 0.5rem;
+  padding-block: 0.25rem;
 }
 
 .contactme-address {
@@ -228,7 +248,7 @@ h3 {
   line-height: 1.1em;
 }
 
-.contactme-address:nth-of-type(3){
+.contactme-address:nth-of-type(3) {
   padding-block-end: 2rem;
 }
 
@@ -236,6 +256,34 @@ h3 {
   height: 1.5rem;
   width: 1.5rem;
 }
+
+#lightbox {
+  position: fixed;
+  display: none;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 500ms ease-in-out;
+  transform-origin: top;
+}
+
+#lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#lightbox-image {
+  width: 500px;
+  height: 500px;
+  border: 2px solid white;
+  background: black;
+  padding: 4px;
+  object-fit: cover;
+}
+
 @media screen and (width < 640px) {
   .profile-image {
     background: linear-gradient(
@@ -243,9 +291,8 @@ h3 {
       #0891b2 50%,
       var(--wrapper-background-color) 50%
     );
-
   }
-  .contact-card .profile-text{
+  .contact-card .profile-text {
     margin-block-end: 2rem;
   }
 }
@@ -273,6 +320,9 @@ h3 {
   .image img {
     content: url("../assets/images/raster/self-portrait.webp");
   }
+  .contact-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (width > 960px) {
@@ -295,6 +345,9 @@ h3 {
     justify-content: center;
     max-width: fit-content;
     margin-inline: auto;
+  }
+  .contact-card {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
